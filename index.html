@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Markdown Editor with Custom Font & Styling</title>
+    
+    <!-- Highlight.js for Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    
+    <!-- MathJax for Rendering Equations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <!-- Settings Section -->
+    <div class="settings">
+        <h3>Customize Markdown Styling</h3>
+        <label>H1 Color: <input type="color" id="h1Color" value="#f8f8f8"></label>
+        <label>H2 Color: <input type="color" id="h2Color" value="#f0f0f0"></label>
+        <label>Paragraph Color: <input type="color" id="pColor" value="#ddd"></label>
+        <label>Font Family: 
+            <select id="fontSelect">
+                <option value="Roboto">Roboto</option>
+                <option value="Open Sans">Open Sans</option>
+                <option value="Lora">Lora</option>
+            </select>
+        </label>
+    </div>
+
+    <!-- Toolbar Section -->
+    <div class="toolbar">
+        <button onclick="applyFormat('bold')">Bold</button>
+        <button onclick="applyFormat('italic')">Italic</button>
+        <button onclick="applyFormat('code')">Code</button>
+    </div>
+
+    <!-- Markdown Input and Preview -->
+    <div class="container">
+        <textarea id="markdownInput" placeholder="Type Markdown here..."></textarea>
+        <div class="preview" id="markdownPreview"></div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button id="exportBtn">Export as HTML</button>
+        <button id="clearBtn">Clear Editor</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
